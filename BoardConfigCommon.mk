@@ -24,10 +24,7 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.kirin
 
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_NO_KERNEL := true
 PRODUCT_FULL_TREBLE := true
-BOARD_VNDK_VERSION := current
-
 
 # Platform
 TARGET_ARCH := arm64
@@ -75,12 +72,6 @@ TARGET_EXFAT_DRIVER := exfat
 # Lineage hardware
 BOARD_HARDWARE_CLASS += \
     $(PLATFORM_PATH)/lineagehw
-    
-# Display
-TARGET_USES_HWC2 := true
-
-# Binder
-TARGET_USES_64_BIT_BINDER := true
 
 # Cpuset
 ENABLE_CPUSETS := true
@@ -89,7 +80,6 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Graphics
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
 HWUI_COMPILE_SYMBOLS := true
 
@@ -120,6 +110,4 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/libhwsmartdisplay_jni.so|libshims_hwsmartdisplay_jni.so
 
 # System size
-BOARD_KERNELIMAGE_PARTITION_SIZE := 15800132
-BOARD_RAMDISKIMAGE_PARTITION_SIZE := 10533422
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2000000000	# 2.0 GB

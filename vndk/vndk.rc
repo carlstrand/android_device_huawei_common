@@ -1,6 +1,4 @@
 on post-fs
 	exec - root -- /system/bin/vndk-detect
 	exec - root -- /system/bin/resize-system.sh
-
-on post-fs && property:ro.hardware=kirin970
     export LD_CONFIG_FILE /system/etc/ld.config.${persist.sys.vndk}.txt

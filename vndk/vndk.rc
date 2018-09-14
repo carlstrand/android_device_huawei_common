@@ -4,12 +4,3 @@ on post-fs
 
 on post-fs && property:ro.hardware=kirin970
     export LD_CONFIG_FILE /system/etc/ld.config.${persist.sys.vndk}.txt
-
-on post-fs && property:ro.hardware=hi3660
-    export LD_CONFIG_FILE /system/etc/ld.config.${persist.sys.vndk}.txt
-
-on post-fs && property:ro.hardware=hi3650
-    export LD_CONFIG_FILE /system/etc/ld.config.hi3650.txt
-
-on post-fs && property:ro.hardware=hi6250
-    export LD_CONFIG_FILE /system/etc/ld.config.${persist.sys.vndk}.txt

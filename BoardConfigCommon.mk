@@ -87,6 +87,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
+include vendor/omni/sepolicy/sepolicy.mk
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

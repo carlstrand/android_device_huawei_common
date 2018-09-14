@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
 
 BOARD_BUILD_DISABLED_VBMETAIMAGE := false
 
-
 # Camera
 PRODUCT_COPY_FILES += \
    $(PLATFORM_PATH)/camera/cam.hi3650.sh:system/bin/cam.hi3650.sh
@@ -137,21 +136,15 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \
     ro.build.version.huawei=8.0.0 \
     ro.build.version.release=$(PLATFORM_VERSION) \
-    ro.cust.cdrom=/dev/null
-
-# Sdcardfs    
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cust.cdrom=/dev/null \
     ro.sys.sdcardfs=0 \
     persist.sys.sdcardfs.emulated=0 \
-    persist.sys.sdcardfs.public=0
+    persist.sys.sdcardfs.public=0 \
+    persist.sys.usb.config=adb
     
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
-    
-# Huawei HiSuite (also other OEM custom programs I guess) it's of no use in AOSP builds
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-	persist.sys.usb.config=adb
 
 # USB Audio
 PRODUCT_COPY_FILES += \

@@ -16,7 +16,6 @@
 
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/treble_common.mk)
 $(call inherit-product, vendor/huawei/vndk/vndk.mk)
 
@@ -30,8 +29,6 @@ DEVICE_PACKAGE_OVERLAYS += $(PLATFORM_PATH)/overlay-common/main
 PRODUCT_PACKAGES += \
     init.kirin.rc \
     init.kirin.environ.rc
-
-BOARD_BUILD_DISABLED_VBMETAIMAGE := false
 
 # Camera
 PRODUCT_COPY_FILES += \

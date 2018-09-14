@@ -64,8 +64,8 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/releasetools/releasetools.kirin.sh:system/bin/releasetools.kirin.sh
     
 # Huawei Device Settings    
-#PRODUCT_PACKAGES += \
-#    HuaweiParts
+PRODUCT_PACKAGES += \
+    HuaweiParts
 
 # Huawei Doze
 #PRODUCT_PACKAGES += \

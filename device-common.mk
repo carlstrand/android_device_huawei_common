@@ -15,9 +15,10 @@
 #
 
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/treble_common.mk)
-$(call inherit-product, vendor/huawei/vndk/vndk.mk)
+$(call inherit-product, vendor/huawei/common/vndk.mk)
 
 # Platform Path
 PLATFORM_PATH := device/huawei/common
@@ -31,8 +32,8 @@ PRODUCT_PACKAGES += \
     init.kirin.environ.rc
 
 # Camera
-PRODUCT_COPY_FILES += \
-   $(PLATFORM_PATH)/camera/cam.hi3650.sh:system/bin/cam.hi3650.sh
+#PRODUCT_COPY_FILES += \
+#   $(PLATFORM_PATH)/camera/cam.hi3650.sh:system/bin/cam.hi3650.sh
 
 # Display
 PRODUCT_PACKAGES += \
@@ -63,12 +64,12 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/releasetools/releasetools.kirin.sh:system/bin/releasetools.kirin.sh
     
 # Huawei Device Settings    
-PRODUCT_PACKAGES += \
-    HuaweiParts
+#PRODUCT_PACKAGES += \
+#    HuaweiParts
 
 # Huawei Doze
-PRODUCT_PACKAGES += \
-    HisiDoze
+#PRODUCT_PACKAGES += \
+#    HisiDoze
 
 # Hotword fix
 PRODUCT_PACKAGES += \
@@ -152,8 +153,7 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/vndk/vndk-detect:system/bin/vndk-detect \
     $(PLATFORM_PATH)/vndk/vndk.rc:system/etc/init/vndk.rc \
     $(PLATFORM_PATH)/vndk/ld.config.26.txt:system/etc/ld.config.26.txt \
-    $(PLATFORM_PATH)/vndk/ld.config.27.txt:system/etc/ld.config.27.txt \
-    $(PLATFORM_PATH)/vndk/ld.config.hi3650.txt:system/etc/ld.config.hi3650.txt
+    $(PLATFORM_PATH)/vndk/ld.config.27.txt:system/etc/ld.config.27.txt 
     
 # GPS
 PRODUCT_COPY_FILES += \

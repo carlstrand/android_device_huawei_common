@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.settings.device.preference;
+package org.omnirom.device.preference;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -45,13 +45,13 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import org.carbonrom.settings.device.ui.ColorPanelView;
-import org.carbonrom.settings.device.ui.ColorPickerView;
-import org.carbonrom.settings.device.ui.ColorPickerView.OnColorChangedListener;
-import org.carbonrom.settings.device.R;
-import org.carbonrom.settings.device.DeviceSettings;
-import org.carbonrom.settings.device.DisplayModeControl;
-import org.carbonrom.settings.device.Utils;
+import org.omnirom.device.ui.ColorPanelView;
+import org.omnirom.device.ui.ColorPickerView;
+import org.omnirom.device.ui.ColorPickerView.OnColorChangedListener;
+import org.omnirom.device.R;
+import org.omnirom.device.DeviceSettings;
+import org.omnirom.device.DisplayModeControl;
+import org.omnirom.device.Utils;
 
 import java.util.ArrayList;
 import java.util.IllegalFormatException;

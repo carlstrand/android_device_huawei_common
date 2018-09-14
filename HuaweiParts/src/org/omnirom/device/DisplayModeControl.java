@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.settings.device;
+package org.omnirom.device;
 
 import android.os.SystemProperties;
 import android.util.Log;
@@ -56,11 +56,13 @@ public class DisplayModeControl {
             } else if (SystemProperties.get(DISPLAY_ENGINE_V1_1_PROP, "") != "") {
                 sDisplayEngineService = new DisplayEngineService_V1_1();
             }
-            
+
             sHwSmartDisplayService = new HwSmartDisplayService();
-            mExtTouchScreen = new ExtTouchScreen();            
-            sHwSmartDisplayService.init_native();  
+            sHwSmartDisplayService.init_native();
+
             mHwPowerManager = new HwPowerManagerService();
+
+            mExtTouchScreen = new ExtTouchScreen();
 
             sColorEnhancementCurrentMode = 0;
 

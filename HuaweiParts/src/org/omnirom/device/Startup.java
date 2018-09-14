@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package org.carbonrom.settings.device;
+package org.omnirom.device;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -37,12 +37,12 @@ public class Startup extends BroadcastReceiver {
         SystemProperties.set(DeviceSettings.FPNAV_ENABLED_PROP, sharedPrefs.getBoolean(DeviceSettings.KEY_FP_GESTURES, false) ? "1" : "0");
         DisplayModeControl.mExtTouchScreen.hwTsSetCoverMode(sharedPrefs.getBoolean(DeviceSettings.KEY_HIGH_TOUCH, false));
         DisplayModeControl.sDisplayEngineService.setBootComplete(true);
-        
-        long packedColor = Color.pack(Integer.parseInt(Utils.getPreference(context, DeviceSettings.COLOUR_TEMP_RGB_KEY,
-                String.valueOf(0xFFFFFF))));
-        DisplayModeControl.mHwPowerManager.nativeUpdateRgbGamma(Color.red(packedColor), Color.green(packedColor), Color.blue(packedColor));
 
         DisplayModeControl.setMode(Integer.parseInt(Utils.getPreference(context, DeviceSettings.COLOUR_PROFILES_KEY, "0")));
         DisplayModeControl.mHwPowerManager.nativeSetColorTemperature(Integer.parseInt(Utils.getPreference(context, DeviceSettings.COLOUR_TEMP_KEY, "128")));
+
+        long packedColor = Color.pack(Integer.parseInt(Utils.getPreference(context, DeviceSettings.COLOUR_TEMP_RGB_KEY,
+                String.valueOf(0xFFFFFF))));
+        DisplayModeControl.mHwPowerManager.nativeUpdateRgbGamma(Color.red(packedColor), Color.green(packedColor), Color.blue(packedColor));
     }
 }

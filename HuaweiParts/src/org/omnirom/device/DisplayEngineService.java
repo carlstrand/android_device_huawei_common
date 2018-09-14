@@ -175,7 +175,7 @@ public class DisplayEngineService {
     }
 
     public boolean isColorModeSupported() {
-        return true;
+        return false;
     }
 
     public int enableColorMode(boolean enable) {

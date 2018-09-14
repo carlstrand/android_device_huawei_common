@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.settings.device.ui;
+package org.omnirom.device.ui;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

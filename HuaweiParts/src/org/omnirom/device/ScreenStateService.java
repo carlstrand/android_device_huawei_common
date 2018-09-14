@@ -16,7 +16,7 @@
 *
 */
 
-package org.carbonrom.settings.device;
+package org.omnirom.device;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;

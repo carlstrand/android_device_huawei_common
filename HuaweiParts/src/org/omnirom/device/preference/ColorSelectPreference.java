@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.settings.device.preference;
+package org.omnirom.device.preference;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -28,7 +28,7 @@ import android.support.v7.preference.PreferenceViewHolder;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import org.carbonrom.settings.device.R;
+import org.omnirom.device.R;
 
 public class ColorSelectPreference extends Preference implements DialogInterface.OnDismissListener {
 

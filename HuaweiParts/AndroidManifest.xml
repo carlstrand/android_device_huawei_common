@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.carbonrom.settings.device"
+    package="org.omnirom.device"
     android:sharedUserId="android.uid.system" >
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -18,25 +18,17 @@
         android:theme="@style/AppTheme"
         android:supportsRtl="true" >
         <activity
-            android:name="org.carbonrom.settings.device.DeviceSettingsActivity"
+            android:name="org.omnirom.device.DeviceSettingsActivity"
             android:exported="false"
             android:label="@string/advanced_settings"
-            android:icon="@drawable/ic_settings_parts"
             android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
-                  <meta-data android:name="com.android.settings.dismiss"
-                       android:value="9,13,30" />
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.homepage" />
         </activity>
         <activity-alias
-            android:name="org.carbonrom.settings.device.DeviceSettings"
-            android:icon="@drawable/ic_settings_parts"
+            android:name="org.omnirom.device.DeviceSettings"
             android:exported="true"
             android:label="@string/advanced_settings"
             android:targetActivity="DeviceSettingsActivity" >
@@ -44,16 +36,21 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-                <meta-data android:name="com.android.settings.dismiss"
-                       android:value="9,13,30" />
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.homepage" />
         </activity-alias>
         <activity
-            android:name="org.carbonrom.settings.device.GestureSettingsActivity"
+            android:name="org.omnirom.device.GestureSettingsActivity"
             android:exported="false"
             android:label="@string/category_gestures_title"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.omnirom.device.DozeSettingsActivity"
+            android:exported="false"
+            android:label="@string/doze_category_title"
             android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,7 +62,7 @@
                 <action android:name="ScreenStateService"/>
             </intent-filter>
         </service>
-        <receiver android:name="org.carbonrom.settings.device.Startup" >
+        <receiver android:name="org.omnirom.device.Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

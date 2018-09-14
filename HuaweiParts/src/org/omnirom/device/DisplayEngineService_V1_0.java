@@ -18,7 +18,7 @@ package com.android.server.display;
 
 import com.android.server.display.DisplayEngineService;
 
-public class DisplayEngineService_V1_1 extends DisplayEngineService {
+public class DisplayEngineService_V1_0 extends DisplayEngineService {
     public static final int DE_ACTION_START = 0;
     public static final int DE_ACTION_STOP = 1;
     public static final int DE_ACTION_PAUSE = 2;
@@ -69,9 +69,7 @@ public class DisplayEngineService_V1_1 extends DisplayEngineService {
     public static final int DE_DATA_TYPE_XNIT_BRIGHTLEVEL = 6;
     public static final int DE_DATA_TYPE_3D_COLORTEMP = 7;
     public static final int DE_DATA_TYPE_RGLED = 8;
-    public static final int DE_DATA_TYPE_AMBIENTPARAM = 9;
-    public static final int DE_DATA_TYPE_IAWARE = 10;
-    public static final int DE_DATA_MAX = 11;
+    public static final int DE_DATA_MAX = 9;
 
     public static final int DE_EFFECT_TYPE_PANEL_NAME = 0;
 
@@ -96,11 +94,7 @@ public class DisplayEngineService_V1_1 extends DisplayEngineService {
     public static final int DE_FEATURE_3D_COLOR_TEMPERATURE = 18;
     public static final int DE_FEATURE_RGLED = 19;
     public static final int DE_FEATURE_HBM = 20;
-    public static final int DE_FEATURE_EYE_PROTECT_WITHCT = 21;
-    public static final int DE_FEATURE_SHARP2P = 22;
-    public static final int DE_FEATURE_TRUE_TONE = 23;
-    public static final int DE_FEATURE_ACL = 24;
-    public static final int DE_FEATURE_MAX = 25;
+    public static final int DE_FEATURE_MAX = 21;
 
     public static final int DE_SCENE_PG = 0;
     public static final int DE_SCENE_VIDEO = 1;
@@ -113,22 +107,20 @@ public class DisplayEngineService_V1_1 extends DisplayEngineService {
     public static final int DE_SCENE_QQ = 8;
     public static final int DE_SCENE_TAOBAO = 9;
     public static final int DE_SCENE_POWERMODE = 10;
-    public static final int DE_SCENE_COLORTEMP = 11;
-    public static final int DE_SCENE_SRE = 12;
-    public static final int DE_SCENE_COLORMODE = 13;
-    public static final int DE_SCENE_PROCAMERA = 14;
-    public static final int DE_SCENE_EYEPROTECTION = 15;
-    public static final int DE_SCENE_XNIT = 16;
-    public static final int DE_SCENE_PG_EX = 17;
-    public static final int DE_SCENE_BOOT_CMPL = 18;
-    public static final int DE_SCENE_3D_COLORTMP = 19;
-    public static final int DE_SCENE_RGLED = 20;
-    public static final int DE_SCENE_BACKLIGHT_CHANGE = 21;
-    public static final int DE_SCENE_HBM_BACKLIGHT = 22;
-    public static final int DE_SCENE_VIDEO_APP = 23;
-    public static final int DE_SCENE_REAL_POWERMODE = 24;
-    public static final int DE_SCENE_NATURAL_TONE = 25;
-    public static final int DE_SCENE_MAX = 26;
+    public static final int DE_SCENE_AMBIENTLIGHT = 11;
+    public static final int DE_SCENE_COLORTEMP = 12;
+    public static final int DE_SCENE_SRE = 13;
+    public static final int DE_SCENE_COLORMODE = 14;
+    public static final int DE_SCENE_PROCAMERA = 15;
+    public static final int DE_SCENE_EYEPROTECTION = 16;
+    public static final int DE_SCENE_XNIT = 17;
+    public static final int DE_SCENE_PG_EX = 18;
+    public static final int DE_SCENE_BOOT_CMPL = 19;
+    public static final int DE_SCENE_3D_COLORTMP = 20;
+    public static final int DE_SCENE_RGLED = 21;
+    public static final int DE_SCENE_BACKLIGHT_CHANGE = 22;
+    public static final int DE_SCENE_HBM_BACKLIGHT = 23;
+    public static final int DE_SCENE_MAX = 24;
 
     @Override
     public boolean isColorModeSupported() {
@@ -144,7 +136,7 @@ public class DisplayEngineService_V1_1 extends DisplayEngineService {
     public int enablePowerMode(boolean enable) {
         return setScene(DE_SCENE_POWERMODE, enable ? DE_ACTION_MODE_ON : DE_ACTION_MODE_OFF);
     }
-
+    
     @Override
     public int setBootComplete(boolean enable) {
         return setScene(DE_SCENE_BOOT_CMPL, enable ? DE_ACTION_MODE_ON : DE_ACTION_MODE_OFF);
